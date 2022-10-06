@@ -54,10 +54,10 @@ class FirmSerializers(serializers.ModelSerializer):
 
 class StockSerializers(serializers.ModelSerializer):
     firm = serializers.StringRelatedField()
-    firm_id = serializers.IntegerField(write_only=True, required=False)
+    firm_id = serializers.IntegerField()
     user = serializers.StringRelatedField()
     product = serializers.StringRelatedField()
-    product_id = serializers.IntegerField(write_only=True, required=False)
+    product_id = serializers.IntegerField()
 
     class Meta:
         model = Stock
