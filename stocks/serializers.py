@@ -74,7 +74,7 @@ class StockSerializers(serializers.ModelSerializer):
             'price_total'
         )
 
-    read_only_fields = ('price_total',)
+        read_only_fields = ('price_total',)
 
     def validate(self, data):
         if data.get('transaction') == "O":
