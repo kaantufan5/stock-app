@@ -78,7 +78,7 @@ class StockSerializers(serializers.ModelSerializer):
 
     def validate(self, data):
         if data.get('transaction') == "O":
-            product = Product.object.get(id=data.get('product_id'))
+            product = Product.objects.get(id=data.get('product_id'))
             if data.get('quantity') > product.stock:
                 raise serializers.ValidationError(
                     f'Sorry, we are out of stock. Stock: {product.stock}'
